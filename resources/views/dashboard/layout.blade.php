@@ -23,7 +23,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar">
                 <div class="navbar-nav w-100 pt-5">
-                    <a href="dashboard.html" class="nav-item nav-link active">
+                    <a href="{{ route('dashboard') }}" class="nav-item nav-link active">
                         <i class="bi bi-house me-2"></i>
                     </i>
                 </a>
@@ -40,7 +40,7 @@
     <div class="content">
 
         <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-            <a href="#" class="sidebar-toggler flex-shrink-0">
+            <a href="{{ route('dashboard') }}" class="sidebar-toggler flex-shrink-0">
                 <i class="bi bi-list"></i>
             </a>
             <div class="d-none d-md-flex ms-4 pt-2">
@@ -69,7 +69,7 @@
             <hr>
             <ul class="pt-3 list-unstyled">
                 <li class="mt-2">
-                    <a href="perfil.html" class="text-decoration-none d-flex align-items-center">
+                    <a href="{{ route('config') }}" class="text-decoration-none d-flex align-items-center">
                         <i class="bi bi-gear pe-1"></i>
                         Configurações
                     </a>

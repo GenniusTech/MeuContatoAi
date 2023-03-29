@@ -7,7 +7,7 @@
                 <h6 class="mb-4 content-title">MEUS APLICATIVOS</h6>
                 <div class="row">
                     <div class="col-sm-2">
-                        <a href="link.html" class="app card-app p-3">
+                        <a href="{{ route('create') }}" class="app card-app p-3">
                             <i class="bi bi-whatsapp"></i>
                             <h3>
                                 Link para
