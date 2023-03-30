@@ -75,10 +75,10 @@
                     </a>
                 </li>
                 <li class="mt-2">
-                    <button class="btn text-decoration-none p-0 m-0">
-                        <i class="bi bi-box-arrow-right pe-1"></i>
+                    <a href="{{ route('logout') }}" class="text-decoration-none d-flex align-items-center">
+                        <i class="bi bi-gear pe-1"></i>
                         Sair
-                    </button>
+                    </a>
                 </li>
             </ul>
             <a href="#" class="modal__close">&times;</a>

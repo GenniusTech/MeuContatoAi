@@ -20,4 +20,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/create', [DashController::class, 'create'])->name('create');
     Route::get('/app', [DashController::class, 'app'])->name('app');
     Route::get('/configurações', [DashController::class, 'config'])->name('config');
+    Route::get('/logout', [DashController::class, 'logout'])->name('logout');
 }); 
