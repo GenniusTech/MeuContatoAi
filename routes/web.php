@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\InicialController;
 use App\Http\Controllers\LoginController;
@@ -19,6 +20,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/painel', [DashController::class, 'dashboard'])->name('dashboard');
     Route::get('/create', [DashController::class, 'create'])->name('create');
     Route::get('/app', [DashController::class, 'app'])->name('app');
-    Route::get('/configurações', [DashController::class, 'config'])->name('config');
+
+    Route::get('/configurações', [ConfigController::class, 'config'])->name('config');
+    Route::put('/update', [ConfigController::class, 'update'])->name('update');
+
+
     Route::get('/logout', [DashController::class, 'logout'])->name('logout');
 }); 

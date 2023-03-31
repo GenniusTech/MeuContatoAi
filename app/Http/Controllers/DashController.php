@@ -16,9 +16,6 @@ class DashController extends Controller
     public function create (){
         return view('dashboard.create');
     }
-    public function config (){
-        return view('dashboard.config');
-    }
 
     public function logout()
     {
