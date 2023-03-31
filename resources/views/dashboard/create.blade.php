@@ -11,6 +11,13 @@
                         </h3>
                     </div>
                     <div class="container-form col-sm-6">
+                        <br>
+                        @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                       @endif
+
                         <form class="row g-3 p-3"action="{{ route('createLink') }}" method="POST">
                             @csrf
                             @method('POST')

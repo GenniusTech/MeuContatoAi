@@ -20,7 +20,7 @@ class ConfigController extends Controller
     
     private function formatarTelefone($telefone)
     {
-        return '(' . substr($telefone, 0, 2) . ') ' . substr($telefone, 2, 4) . '-' . substr($telefone, 6);
+        return '(' . substr($telefone, 0, 2) . ') ' . substr($telefone, 2, 5) . '-' . substr($telefone, 7);
     }
 
     public function update(Request $request) {

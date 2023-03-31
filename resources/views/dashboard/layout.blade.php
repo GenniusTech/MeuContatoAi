@@ -64,8 +64,8 @@
 
     <div id="modal-perfil" class="modal-perfil pt-5">
         <div class="modal-content-perfil">
-            <h2 class="fw-bold pt-5">nome</h2>
-            <p class="mt-3 mb-0 text-muted">email@gmail.com</p>
+            <h2 class="fw-bold pt-5">{{ auth()->user()->name }}</h2>
+            <p class="mt-3 mb-0 text-muted">{{ auth()->user()->email }}</p>
             <hr>
             <ul class="pt-3 list-unstyled">
                 <li class="mt-2">
