@@ -11,13 +11,18 @@
                         </h3>
                     </div>
                     <div class="container-form col-sm-6">
-                        <form class="row g-3 p-3">
+                        <form class="row g-3 p-3"action="{{ route('createLink') }}" method="POST">
+                            @csrf
+                            @method('POST')
                             <div class="col-sm-12">
-                                <label for="inputEmail4" class="form-label">Número de WhatsApp</label>
+                                <label for="inputEmail4" class="form-label" >Número de WhatsApp</label>
                                 <input type="number"
                                 class="form-control"
                                 id="inputEmail4"
-                                placeholder="+55">
+                                placeholder="+55"
+                                name="numero"
+                                required
+                                >
                             </div>
                             <div class="col-sm-12">
                                 <label for="inputAddress" class="form-label">Link personalizado</label>
@@ -26,6 +31,8 @@
                                     class="form-control"
                                     id="inputAddress"
                                     placeholder="contate.me/sua-empresa"
+                                    name="rota"
+                                    required
                                 >
                             </div>
                             <div class="col-sm-12">
@@ -35,10 +42,12 @@
                                     class="form-control"
                                     id="inputAddress2"
                                     placeholder="Oi, estou com dúvida..."
+                                    name="mensagem"
+                                    required
                                 >
                             </div>
                             <div class="col-sm-12 pt-4">
-                                <a href="link-para-whatsapp.html" type="submit" class="btn btn-primary">Criar link de WhatasApp</a>
+                                <button href="link-para-whatsapp.html" type="submit" class="btn btn-primary">Criar link de WhatasApp</button>
                             </div>
                         </form>
                     </div>

@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ConfigController;
+use App\Http\Controllers\CreateLinkController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\InicialController;
+use App\Http\Controllers\LinkController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +18,12 @@ Route::post('/login', [LoginController::class, 'login_action'])->name('login_act
 Route::get('/registrer', [RegisterController::class, 'register'])->name('register');
 Route::post('/registrer', [RegisterController::class, 'register_action'])->name('register_action');
 
+
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/painel', [DashController::class, 'dashboard'])->name('dashboard');
-    Route::get('/create', [DashController::class, 'create'])->name('create');
+    Route::get('/create', [CreateLinkController::class, 'create'])->name('create');
+    Route::post('/createLink', [CreateLinkController::class, 'createLink'])->name('createLink');
     Route::get('/app', [DashController::class, 'app'])->name('app');
 
     Route::get('/configurações', [ConfigController::class, 'config'])->name('config');
@@ -27,3 +32,4 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/logout', [DashController::class, 'logout'])->name('logout');
 }); 
+Route::get('/{any}', [LinkController::class,'handle'])->where('any', '.*');

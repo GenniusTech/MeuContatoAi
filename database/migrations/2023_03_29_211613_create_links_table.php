@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('links', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('user_id');
-            $table->integer('numero');
+            $table->bigInteger('numero');
             $table->string('rota')->unique();
             $table->string('mensagem');
             $table->string('url');
