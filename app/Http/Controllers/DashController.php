@@ -10,11 +10,7 @@ class DashController extends Controller
     public function dashboard (){
         return view('dashboard.index');
     }
-    public function app (){
-        return view('dashboard.myapp');
-    }
     
-
     public function logout()
     {
         Auth::logout();

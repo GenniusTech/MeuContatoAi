@@ -17,7 +17,7 @@
                         </a>
                     </div>
                     <div class="col-sm-2">
-                        <a href="meus-aplicativos.html" class="app card-app p-3">
+                        <a href="{{ route('app') }}" class="app card-app p-3">
                             <i class="bi bi-grid me-2"></i>
                             <h3>
                                 Ver todos

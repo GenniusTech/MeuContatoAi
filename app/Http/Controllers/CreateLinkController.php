@@ -52,7 +52,7 @@ class CreateLinkController extends Controller
         if ($request->has('numero') && $request->has('mensagem')) {
             $numero = $request->input('numero');
             $mensagem = $request->input('mensagem');
-            $url = "https://api.whatsapp.com/send?phone={$numero}&text={$mensagem}";
+            $url = "https://api.whatsapp.com/send?phone=55{$numero}&text={$mensagem}";
             $user->url = $url;
         }
         
