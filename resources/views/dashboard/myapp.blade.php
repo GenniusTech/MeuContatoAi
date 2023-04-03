@@ -28,19 +28,21 @@
                                 </td>
                                 <td>
                                     <div class="d-flex">
-                                        <button  id="btn-copiar" onclick="copiarLink()"class="btn btn-secondary btn-sm rounded-circle me-2">
+                                        <button onclick="copiarLink('{{ $url }}')" class="btn btn-secondary btn-sm rounded-circle me-2">
                                             <i class="bi bi-subtract"></i>
                                         </button>
+                                        
+                                        
                                         <script>
-                                            function copiarLink() {
+                                       function copiarLink(link) {
                                             var campoDeTexto = document.createElement("input");
-                                            campoDeTexto.value = window.location.href;
+                                            campoDeTexto.value = link;
                                             document.body.appendChild(campoDeTexto);
                                             campoDeTexto.select();
                                             document.execCommand("copy");
                                             document.body.removeChild(campoDeTexto);
                                             alert("Link copiado para a área de transferência.");
-}
+                                        }
 
                                         </script>
                                         <a class="btn btn-secondary btn-sm rounded-circle me-2" href="#">

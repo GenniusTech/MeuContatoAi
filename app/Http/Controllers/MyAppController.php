@@ -10,8 +10,6 @@ class MyAppController extends Controller
 {
     public function app (){
         $auth = Auth::user();
-       
-
         $links = Link::where('user_id', $auth->id)->get();
         $urls = [];
     
