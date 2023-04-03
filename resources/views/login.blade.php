@@ -22,6 +22,7 @@
                     </div>-->
                     <div class="col-lg-12 text-center">
                         <button type="submit" class="btn btn-primary">Entrar</button>
+                        <a href="/registrer" class="btn btn-primary mt-3">Cadastre-se</a>
                     </div>
                     <p class="text-center mt-4" style="color: #fff;">TechGennius V 0.0.1</p>
                 </form>

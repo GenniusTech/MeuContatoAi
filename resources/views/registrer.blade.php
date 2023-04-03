@@ -32,8 +32,9 @@
                     </div>
                     <div class="col-lg-12 text-center pt-2">
                         <button type="submit" class="btn btn-primary">Finalizar</button>
+                        <a href="/login" class="btn btn-primary mt-3">Minha Conta</a>
                     </div>
-                    <p class="text-center mt-4" style="color: #fff;">TechGennius</p>
+                    <p class="text-center mt-4" style="color: #fff;">TechGennius V 0.0.1</p>
                 </form>
             </div>
         </div>

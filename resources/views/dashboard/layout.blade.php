@@ -55,7 +55,7 @@
         <div class="bg-light rounded-top p-4">
             <div class="row">
                 <div class="col-lg-12 col-sm-12 text-center">
-                    &copy; <a href="#">Grupo Sollution</a>, todos os direitos reservados.
+                    &copy; <a href="https://techgennius.com.br/">Tech Gennius</a>, todos os direitos reservados.
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
                 </li>
                 <li class="mt-2">
                     <a href="{{ route('logout') }}" class="text-decoration-none d-flex align-items-center">
-                        <i class="bi bi-gear pe-1"></i>
+                        <i class="bi bi-box-arrow-right pe-1"></i>
                         Sair
                     </a>
                 </li>

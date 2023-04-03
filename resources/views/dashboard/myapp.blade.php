@@ -20,7 +20,7 @@
                     <table class="table mt-2">
                         <tbody>
                             @foreach ($urls as $url)
-    
+
                             <tr>
                                 <td class="w-100">
                                     <a rel="noreferrer" href="{{ $url }}"
@@ -31,8 +31,8 @@
                                         <button onclick="copiarLink('{{ $url }}')" class="btn btn-secondary btn-sm rounded-circle me-2">
                                             <i class="bi bi-subtract"></i>
                                         </button>
-                                        
-                                        
+
+
                                         <script>
                                        function copiarLink(link) {
                                             var campoDeTexto = document.createElement("input");
@@ -45,7 +45,7 @@
                                         }
 
                                         </script>
-                                        <a class="btn btn-secondary btn-sm rounded-circle me-2" href="#">
+                                        <a class="btn btn-secondary btn-sm rounded-circle me-2" target="_bank" href="{{ $url }}">
                                             <i class="bi bi-eye"></i>
                                         </a>
                                     </div>
