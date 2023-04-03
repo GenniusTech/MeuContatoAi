@@ -27,7 +27,7 @@
                         <i class="bi bi-house me-2"></i>
                     </i>
                 </a>
-                <a href="meus-aplicativos.html" class="nav-item nav-link">
+                <a href="{{ route('app') }}" class="nav-item nav-link">
                     <i class="bi bi-grid me-2"></i>
                 </a>
                 <a href="#modal-perfil" class="nav-item nav-link">
