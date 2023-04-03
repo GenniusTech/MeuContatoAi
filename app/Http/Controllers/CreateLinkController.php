@@ -35,10 +35,17 @@ class CreateLinkController extends Controller
             $rota = $request->input('rota');
             if (!$rota) {
                 return redirect()->route('create')->with('success', 'Cadastre um link!');
-    
             }
+        
+            // Verificar se a rota já está sendo utilizada
+            $rotaExistente = Link::where('rota', $rota)->first();
+            if ($rotaExistente) {
+                return redirect()->route('create')->with('error', 'Já existe um link com essa caracteristica!');
+            }
+        
             $user->rota = $rota;
         }
+        
     
         if ($request->has('mensagem')) {
             $mensagem = $request->input('mensagem');
