@@ -17,7 +17,11 @@
                             {{ session('success') }}
                         </div>
                        @endif
-
+                       @if(session('error'))
+                       <div class="alert alert-error" style="color: red; margin:0;">
+                          <small>{{ session('error') }}</small> 
+                       </div>
+                      @endif
                         <form class="row g-3 p-3"action="{{ route('createLink') }}" method="POST">
                             @csrf
                             @method('POST')
