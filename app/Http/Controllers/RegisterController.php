@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -13,27 +14,27 @@ class RegisterController extends Controller
     }
 
     public function register_action(Request $request)
-    {   
-        
+    {
+
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6'
         ]);
-
+    
         $dataUser = [
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'password'=> bcrypt($request->get('password'))
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password'))
         ];
-
-        $userCreate = User::create($dataUser);
-       
-        if ($userCreate) {
-         
-            return redirect()->route('login');
+    
+        $user = User::create($dataUser);
+    
+        if ($user) {
+            Auth::login($user);
+            return redirect()->route('dashboard');
         }
-
-        redirect()->back()->withErrors('Erro! Falha ao cadastrar o usuário!');
+    
+        return redirect()->back()->withErrors('Erro! Falha ao cadastrar o usuário!');
     }
 }
