@@ -32,4 +32,4 @@ class CreateConnectionsTable extends Migration
     {
         Schema::dropIfExists('connections');
     }
-}
+};
