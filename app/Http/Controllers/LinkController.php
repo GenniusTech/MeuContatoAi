@@ -10,7 +10,7 @@ class LinkController extends Controller
     public function handle($any)
     {
         $link = Link::where('rota', $any)->first();
-
+    
         if ($link) {
             $connections = $link->connections()->orderBy('lead')->take(20)->get();
 
@@ -25,8 +25,7 @@ class LinkController extends Controller
                 return redirect($connection->url);
             }
         }
-
-        // Redireciona para a rota "index" (ou qualquer outra rota padrão que você definiu)
+    
         return redirect()->route('index');
     }
 
