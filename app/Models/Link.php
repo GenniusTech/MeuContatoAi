@@ -32,4 +32,13 @@ class Link extends Model
         'email_verified_at' => 'datetime',
     ];
 
+    public function connections()
+    {
+        return $this->hasMany(Connection::class, 'id_link');
+    }
+    public function link()
+    {
+        return $this->belongsTo(Link::class, 'id_link');
+    }
+
 }

@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('links', function (Blueprint $table) {
+        Schema::create('suporte', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('user_id');
-            $table->string('rota')->unique();
-            $table->string('mensagem');
+            $table->string('email');
+            $table->string('tipo');
+            $table->text('conteudo');
+            $table->timestamp('data_cadastro')->nullable();
+            $table->text('resposta')->nullable();
+            $table->timestamp('data_resposta')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('links');
+        Schema::dropIfExists('suporte');
     }
 };

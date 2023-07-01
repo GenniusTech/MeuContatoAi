@@ -32,7 +32,7 @@ class CreateLinkController extends Controller
             $user->numero= $numero;
         }
         if ($request->has('rota')) {
-            $rota = $request->input('rota');
+            $rota = $request->input('rota'); 
             if (!$rota) {
                 return redirect()->route('create')->with('success', 'Cadastre um link!');
             }

@@ -35,4 +35,4 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/logout', [DashController::class, 'logout'])->name('logout');
 }); 
-Route::get('/{any}', [LinkController::class,'handle'])->where('any', '.*');
+Route::get('/{any}', [LinkController::class, 'handle'])->where('any', '.*');
