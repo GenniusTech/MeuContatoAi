@@ -9,10 +9,10 @@ class InicialController extends Controller
 {
     public function index ()
     {
-        
+
         if(Auth::user()){
             return view('dashboard.index');
         }
-        return view('index');
+        return view('home');
     }
 }

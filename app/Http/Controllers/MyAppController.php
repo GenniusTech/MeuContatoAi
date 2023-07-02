@@ -12,7 +12,7 @@ class MyAppController extends Controller
         $auth = Auth::user();
         $links = Link::where('user_id', $auth->id)->get();
         $urls = [];
-    
+
         foreach($links as $link) {
             $rota = $link->rota;
             $url = config('app.url') . '/' . $rota;
@@ -21,6 +21,10 @@ class MyAppController extends Controller
 
         return view('dashboard.myapp',['urls' => $urls]);
     }
- 
+
+    public function editLink(){
+        return view('dashboard.edit_link');
+    }
+
 
 }

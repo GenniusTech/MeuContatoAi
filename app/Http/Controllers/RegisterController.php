@@ -21,20 +21,20 @@ class RegisterController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6'
         ]);
-    
+
         $dataUser = [
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password'))
         ];
-    
+
         $user = User::create($dataUser);
-    
+
         if ($user) {
             Auth::login($user);
             return redirect()->route('dashboard');
         }
-    
+
         return redirect()->back()->withErrors('Erro! Falha ao cadastrar o usuário!');
     }
 }

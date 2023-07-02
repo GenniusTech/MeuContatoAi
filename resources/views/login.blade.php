@@ -1,32 +1,38 @@
 @extends('layout')
     @section('conteudo')
-    <div class="col-sm-12 col-xl-12">
-        <div class="login">
-            <div class="container px-4 py-5">
+
+    <div class="d-lg-flex login">
+        <div class="bg order-1 order-md-2" style="background-image: url('{{ asset('frontend/img/login.png') }}');"></div>
+            <div class="contents order-2 order-md-1">
+
                 <div class="container">
-                    <h3 class="text-white text-center h3 mt-4 px-5">Que bom ver você por aqui... 😊</h3>
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-6">
+                            <h3><strong>Seja bem-vindo</strong></h3>
+                            <p class="mb-4">Faça seu login</p>
+                            <form id="formLogin" class="row g-3" method="POST" action="{{ route('login_action') }}">
+                                <input type="hidden" value={{  csrf_token() }} name="_token">
+                                <div class="col-12">
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="contato@meucontatoai.com">
+                                </div>
+                                <div class="col-12">
+                                    <input type="password" name="senha" class="form-control" id="senha" placeholder="Senha">
+                                </div>
+                                <span><a class="link-opacity-100 ml-4 text-sm text-primary inline-flex" href="#">Esqueceu sua senha?</a></span>
+                                <div class="col-lg-12 d-grid gap-2 col-md-6 mx-auto">
+                                    <button class="btn btn-secondary" type="submit"> Acessar </button>
+                                </div>
+                                <p>
+                                    Não tem uma conta?
+                                    <a class="link-opacity-100 ml-4 text-sm text-primary inline-flex text-center" href="{{ route('register') }}">Inscrever-se</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
                 </div>
 
-                <form class="row g-3" style="width: 100%; max-width: 500px; margin: 0px auto;" method="POST" action="{{ route('login_action') }}">
-                    <input type="hidden" value={{  csrf_token() }} name="_token">
-                    <div class="col-lg-12">
-                        <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="nome@email.com" required>
-                    </div>
-                    <div class="col-lg-12">
-                        <label for="inputPassword4" class="form-label">Senha</label>
-                        <input type="password" class="form-control" name="senha" id="inputPassword4" placeholder="*******" required>
-                    </div>
-                    <!--<div class="pt-3 d-flex justify-content-end">
-                        <a class="text-decoration-none" href="#" style="color:#fff;">Esqueceu a senha?</a>
-                    </div>-->
-                    <div class="col-lg-12 text-center">
-                        <button type="submit" class="btn btn-primary">Entrar</button>
-                        <a href="/registrer" class="btn btn-primary mt-3">Cadastre-se</a>
-                    </div>
-                    <p class="text-center mt-4" style="color: #fff;">TechGennius V 0.0.1</p>
-                </form>
             </div>
         </div>
     </div>
+
     @endsection

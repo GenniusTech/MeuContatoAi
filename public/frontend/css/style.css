@@ -1,0 +1,893 @@
+/********** Template CSS **********/
+:root {
+  --green: #96BF3F;
+  --green-secondary: #98fa75;
+  --light: #F0F4FF;
+  --dark: #191C24;
+  --gray: #383438;
+}
+
+/*--------------------------------------------------------------
+
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Raleway", sans-serif;
+  color: #444444;
+}
+
+a {
+  text-decoration: none;
+  color: var(--green);
+}
+
+a:hover {
+  color: var(--green-secondary);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: var(--green);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: var(--green-secondary);
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 20px 0;
+  background: #fff;
+}
+
+#header.header-scrolled, #header.header-inner-pages {
+  padding: 12px 0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#header .logo {
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+#header .logo a {
+  color: var(--green);
+}
+
+#header .logo img {
+  max-height: 40px;
+}
+
+@media (max-width: 992px) {
+  #header {
+    padding: 12px 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dark);
+  white-space: nowrap;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar a i, .navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover>a {
+  color: var(--dark);
+}
+
+.navbar .getstarted, .navbar .getstarted:focus {
+  padding: 6px 25px;
+  margin-left: 30px;
+  border-radius: 50px;
+  color: var(--dark);
+  border: 2px solid var(--dark);
+}
+
+.navbar .getstarted:hover, .navbar .getstarted:focus:hover {
+  color: #fff;
+  background: var(--dark);
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover>a {
+  color: var(--green);
+}
+
+.navbar .dropdown:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover>ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navbar .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: var(--green);
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: var(--green);
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--green-secondary);
+  transition: 0.3s;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a, .navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: var(--green);
+}
+
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover>a {
+  color: var(--green-secondary);
+}
+
+.navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
+  margin: 15px;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover>a {
+  color: var(--green);
+}
+
+.navbar-mobile .dropdown>.dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: white;
+  border-bottom: 2px solid white;
+}
+
+#hero .container {
+  padding-top: 80px;
+}
+
+#hero h1>strong {
+  margin: 0;
+  font-size: 55px;
+  line-height: 56px;
+  color: var(--gray);
+  font-family: "Poppins", sans-serif;
+}
+
+#hero h2 {
+  font-size: 16px;
+  padding-top: 50px;
+  font-weight: 500;
+}
+
+.btn-get-started, .btn-get-quote {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 8px 30px 9px 30px;
+  margin-bottom: 15px;
+  border-radius: 0;
+  transition: 0.5s;
+}
+
+.btn-get-started {
+  background: var(--dark);
+  color: #fff;
+  border: 2px solid var();
+  margin-right: 10px;
+}
+
+.btn-get-started:hover {
+  background: var(--gray);
+  border-color: var(--gray);
+  color: #fff;
+}
+
+.btn-get-quote {
+  color: var(--dark);
+  border: 2px solid var(--dark);
+}
+
+.btn-get-quote:hover {
+  background: var(--gray);
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 991px) {
+  #hero .hero-img {
+    text-align: center;
+  }
+
+  #hero .hero-img img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  #hero .hero-img img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 575px) {
+  #hero {
+    text-align: center;
+  }
+
+  #hero ul {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  #hero .hero-img img {
+    width: 80%;
+  }
+
+  .btn-get-started, .btn-get-quote {
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 14px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: #eeeef5;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: var(--green);
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--green);
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+.counts {
+  padding: 70px 0 60px;
+}
+
+.counts .count-box {
+  padding: 30px 30px 25px 30px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  /* background: #fff; */
+}
+
+.counts .count-box span {
+  font-size: 93px;
+  display: block;
+  font-weight: 700;
+  color: var(--gray);
+  font-family: 'Poppins', sans-serif;
+}
+
+.counts .count-box p {
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.counts .count-box h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  color: var(--gray);
+  line-height: 1.8em;
+  text-align: left;
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
+  /* text-align: center; */
+  padding: 70px 20px 80px 20px;
+  /* transition: all ease-in-out 0.3s; */
+  /* background: #fff; */
+  /* box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08); */
+}
+
+.services .icon-box h4 {
+  margin: 0;
+  font-size: 55px;
+  line-height: 56px;
+  color: var(--gray);
+  font-family: "Poppins", sans-serif;
+}
+
+.services .icon-box p {
+  font-size: 16px;
+  padding-top: 50px;
+  font-weight: 500;
+}
+
+/*--------------------------------------------------------------
+# Features
+--------------------------------------------------------------*/
+.features {
+  padding: 60px 0;
+}
+
+.features .features-box {
+  text-align: center;
+  /* display: flex;
+  align-items: center;
+  padding: 20px;
+  transition: ease-in-out 0.3s;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); */
+}
+
+.features .features-box h3 {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 48px;
+}
+
+.features .features-box p {
+  font-size: 16px;
+  margin-bottom: 7%;
+  margin-top: 4%;
+}
+
+.features .features-box img {
+  padding-top: 25%;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #444444;
+  font-size: 14px;
+  background: #eeeef5;
+  border-top: 1px solid rgb(255, 255, 255);
+  /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); */
+}
+
+/*--------------------------------------------------------------
+# Login
+--------------------------------------------------------------*/
+.login, .login .container>.row {
+  height: 100vh;
+  min-height: 700px;
+}
+
+@media (max-width: 991.98px) {
+  .login .bg {
+    height: 200px;
+  }
+}
+
+.login .contents {
+  width: 70%;
+  background: #fff;
+}
+
+.login .bg {
+  width: 30%;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 1199.98px) {
+  .login .contents, .login .bg {
+    width: 100%;
+  }
+}
+
+.login h3 {
+  font-size: 48px;
+  color: var(--dark);
+  text-align: center;
+}
+
+.login p {
+  font-size: 16px;
+  color: var(--gray);
+  text-align: center;
+}
+
+.login .form-control {
+  background-color: #F6F7F5;
+  border-color: #F6F7F5;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.login .btn-primary,
+.login .btn-secondary {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -.32px;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+.login .btn-primary {
+  background-color: rgb(224 226 217);
+  border: rgb(224 226 217) solid 1px;
+  color: var(--gray);
+}
+
+.login .btn-secondary {
+  background-color: transparent;
+  border: rgb(224 226 217) solid 1px;
+  color: var(--dark);
+}
+
+.login .btn-secondary>i {
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .login .bg {
+    display: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Dashboard
+--------------------------------------------------------------*/
+.dashboard {
+  padding: 60px 0;
+  height: 100vh;
+}
+
+.dashboard h6 {
+  padding-top: 30px;
+  font-size: 14px;
+  color: #b1b6c7;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.dashboard .app {
+  transition: all 0.4s ease 0s;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  text-decoration: none;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.dashboard .app i {
+  font-size: 32px;
+  color: #9AB251;
+}
+
+.dashboard .card-app {
+  word-wrap: break-word;
+  background-clip: border-box;
+  background-color: #fff;
+  border: 2px solid #f0f4ff;
+  border-radius: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+}
+
+.dashboard .app h3 {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 18px;
+  padding: 0px 1rem;
+  color: #6F7380;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dashboard .app h3:hover {
+  color: #b1b0b0;
+  transition: all 0.4s ease 0s;
+}
+
+/*--------------------------------------------------------------
+# Link WhatsApp
+--------------------------------------------------------------*/
+.link-whats .bi-whatsapp {
+  font-size: 32px;
+  color: #9AB251;
+  vertical-align: middle;
+
+}
+
+.link-whats h3 {
+  font-size: 20px;
+  color: #6F7380;
+  font-weight: 700;
+}
+
+.link-whats h4 {
+  color: #6F7380;
+  font-weight: 700;
+}
+
+.link-whats .btn-primary {
+  font-weight: 500;
+  border-radius: 20px;
+  background-color: #9AB251;
+  border-color: #9AB251;
+}
+
+.link-whats .btn-primary:hover {
+  background-color: #b0ff94;
+  border-color: #b0ff94;
+}
+
+.link-whats .btn-secondary {
+  color: #9AB251;
+  font-weight: 600;
+  background-color: #d9e2ff;
+  border-color: #d9e2ff;
+  border-radius: 10px
+}
+
+.box-content {
+  word-wrap: break-word;
+  background-color: #fff;
+  border: 2px solid #F8F9FA;
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20px;
+}
+
+.box-content form .form-label {
+  color: #31343B;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.box-content form input {
+  min-height: 53px;
+}
+
+.box-content form {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 100%;
+}
+
+
+.link-criado span {
+  color: #9AB251;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.link-criado p {
+  color: #6F7380;
+}
+
+/*--------------------------------------------------------------
+# Link criado
+--------------------------------------------------------------*/
+.btn-secondary {
+  color: #9AB251;
+  font-weight: 600;
+  background-color: #d9e2ff;
+  border-color: #d9e2ff;
+  border-radius: 10px;
+}
+
+.btn-secondary:hover {
+  color: #9AB251;
+  background-color: #d9e2ff;
+  border-color: #d9e2ff;
+}
+
+.btn-secondary>i {
+  font-size: 15px;
+}
+
+.link-criado li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.link-criado li button {
+  background: transparent;
+  color: #6C7380;
+  font-weight: 600;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 18px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content p {
+  color: #31343B;
+}
+
+.tab-content a {
+  color: #9AB251;
+  font-size: 20px;
+}
+
+.tab-content .bi-link-45deg {
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+.btn-outline-primary {
+  background-color: #fff;
+  border: 2px solid #9AB251;
+  color: #9AB251;
+  border-radius: 20px;
+}
+
+.btn-outline-primary:hover {
+  background-color: #9AB251;
+  border: 2px solid #9AB251;
+  color: #fff;
+}

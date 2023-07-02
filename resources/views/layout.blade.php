@@ -1,39 +1,55 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Criador de Links</title>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Meu Contato Ai</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link href="{{ asset('contateme/img/favicon.ico') }}" rel="icon">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="{{ asset('contateme/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('contateme/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('contateme/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('contateme/css/style.css') }}" rel="stylesheet">
-</head>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link href="{{ asset('frontend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('frontend/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+        <link href="{{ asset('frontend/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('frontend/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('frontend/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+        <link href="{{ asset('frontend/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet">
+    </head>
 
-<body>
+    <body>
 
-    <section>
         @yield('conteudo')
-    </section>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('contateme/lib/chart/chart.min.js') }}"></script>
-    <script src="{{ asset('contateme/lib/easing/easing.min.js') }}"></script>
-    <script src="{{ asset('contateme/lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="{{ asset('contateme/lib/owlcarousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('contateme/lib/tempusdominus/js/moment.min.js') }}"></script>
-    <script src="{{ asset('contateme/lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
-    <script src="{{ asset('contateme/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-    <script src="{{ asset('contateme/js/main.js') }}"></script>
-    <script src="{{ asset('contateme/js/tabs.js') }}"></script>
-</body>
+
+        <main id="main">
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container py-4">
+                <div class="me-md-auto text-center">
+                    <div class="copyright">
+                        &copy; Copyright 2023 <span> Meu Contato Aí</span>. Todos os direitos reservados.
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+            <i class="bi bi-arrow-up-short"></i>
+        </a>
+
+        <!-- Vendor JS Files -->
+        <script src="{{ asset('frontend/vendor/purecounter/purecounter.js') }}"></script>
+        <script src="{{ asset('frontend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('frontend/vendor/glightbox/js/glightbox.min.js') }}"></script>
+        <script src="{{ asset('frontend/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('frontend/vendor/swiper/swiper-bundle.min.js') }}"></script>
+        <script src="{{ asset('frontend/vendor/php-email-form/validate.js') }}"></script>
+
+        <!-- Template Main JS File -->
+        <script src="{{ asset('frontend/js/main.js') }}"></script>
+        <script src="{{ asset('frontend/js/tabs.js') }}"></script>
+
+    </body>
 
 </html>
