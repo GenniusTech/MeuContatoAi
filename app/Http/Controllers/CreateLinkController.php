@@ -18,7 +18,7 @@ class CreateLinkController extends Controller
         $user = new Link(); // utilize a palavra "new" para criar um novo objeto "Link"
         
         if (!$auth) { // verifique se há um usuário autenticado
-            return redirect()->route('create')->with('success', 'Erro ao cadastrar link!');
+            return redirect()->route('create')->with('error', 'Erro ao cadastrar link!');
         }
         
         $user->user_id = $auth->id; // atribua o id do usuário autenticado para o campo "user_id"
@@ -26,7 +26,7 @@ class CreateLinkController extends Controller
         if ($request->has('numero')) {
             $numero = $request->input('numero');
             if (!$numero) {
-                return redirect()->route('create')->with('success', 'Numero não encontrado!');
+                return redirect()->route('create')->with('error', 'Numero não encontrado!');
     
             }
             $user->numero= $numero;
@@ -34,7 +34,7 @@ class CreateLinkController extends Controller
         if ($request->has('rota')) {
             $rota = $request->input('rota'); 
             if (!$rota) {
-                return redirect()->route('create')->with('success', 'Cadastre um link!');
+                return redirect()->route('create')->with('error', 'Cadastre um link!');
             }
         
             // Verificar se a rota já está sendo utilizada
@@ -50,7 +50,7 @@ class CreateLinkController extends Controller
         if ($request->has('mensagem')) {
             $mensagem = $request->input('mensagem');
             if (!$mensagem) {
-                return redirect()->route('create')->with('success', 'Campo mensagem vazio!');
+                return redirect()->route('create')->with('error', 'Campo mensagem vazio!');
     
             }
             $user->mensagem = $mensagem;
@@ -68,7 +68,7 @@ class CreateLinkController extends Controller
                
         $user->save();
     
-        return redirect()->route('create')->with('success', 'Link Criado Com Sucesso!');
+        return redirect()->route('app')->with('success', 'Link Criado Com Sucesso!');
     }
     
 }

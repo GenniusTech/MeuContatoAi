@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Connection;
+use App\Models\Link;
 use Illuminate\Http\Request;
 
 class ApiConnectionController extends Controller
@@ -44,15 +45,31 @@ class ApiConnectionController extends Controller
         return response()->json($connections);
     }
     public function delConnection($id)
-{
-    $connection = Connection::find($id);
+    {
+        $connection = Connection::find($id);
 
-    if ($connection) {
-        $connection->delete();
-        return response()->json(['message' => 'Registro excluído com sucesso']);
-    } else {
-        return response()->json(['message' => 'Registro não encontrado'], 404);
+        if ($connection) {
+            $connection->delete();
+            return response()->json(['message' => 'Registro excluído com sucesso']);
+        } else {
+            return response()->json(['message' => 'Registro não encontrado'], 404);
+        }
     }
-}
+
+    public function excluirLink($id)
+    {
+        // Excluir todas as connections onde id_link seja igual ao enviado
+        Connection::where('id_link', $id)->delete();
+
+        // Excluir o link onde o id seja igual ao enviado
+        $link = Link::find($id);
+        if ($link) {
+            $link->delete();
+            return response()->json(true); // Retornar true se a exclusão for bem-sucedida
+        }
+
+        return response()->json(false); // Retornar false se o link não existir
+    }
+
 
 }

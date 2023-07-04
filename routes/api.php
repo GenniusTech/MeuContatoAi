@@ -14,5 +14,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('addConnection', [ApiConnectionController::class, 'addConnection']);
 Route::get('listConnection/{id}', [ApiConnectionController::class, 'listConnection']);
 Route::get('delConnection/{id}', [ApiConnectionController::class, 'delConnection']);
+Route::post('delLink/{id}', [ApiConnectionController::class,'excluirLink'])->name('delLink');
+
 Route::post('addSuporte', [SuporteController::class, 'addSuporte']);
 Route::post('upSuporte/{id}', [SuporteController::class, 'upSuporte']);
