@@ -11,20 +11,37 @@
                         </h3>
                     </div>
                     <div class="box-content col-sm-6">
-                        <form class="row g-3 p-3">
+                        @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                       @endif
+                       @if(session('error'))
+                       <div class="alert alert-error" style="color: red; margin:0;">
+                          <small>{{ session('error') }}</small> 
+                       </div>
+                      @endif
+                        <form class="row g-3 p-3"action="{{ route('createLink') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                            <div class="col-sm-12">
+                                <label for="inputAddress" class="form-label">Numero</label>
+                                <input type="text" class="form-control" id="inputAddress"
+                                    placeholder="00-0000-0000"  name="numero">
+                            </div>
                             <div class="col-sm-12">
                                 <label for="inputAddress" class="form-label">Link personalizado</label>
                                 <input type="text" class="form-control" id="inputAddress"
-                                    placeholder="meucontatoai/sua-empresa">
+                                    placeholder="meucontatoai/sua-empresa" name="rota">
                             </div>
                             <div class="col-sm-12">
                                 <label for="inputAddress2" class="form-label">Mensagem inicial (opcional)</label>
                                 <input type="text" class="form-control" id="inputAddress2"
-                                    placeholder="Oi, estou com dúvida...">
+                                    placeholder="Oi, estou com dúvida..." name="mensagem">
                             </div>
                             <div class="col-sm-12 pt-4">
-                                <a href="link-para-whatsapp.html" type="submit" class="btn btn-primary">Criar link
-                                    de WhatasApp</a>
+                                <button  type="submit" class="btn btn-primary">Criar link
+                                    de WhatasApp</button>
                             </div>
                         </form>
                     </div>

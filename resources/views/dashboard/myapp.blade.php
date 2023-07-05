@@ -18,25 +18,43 @@
                         <h4 class="text-muted h6 mt-3">MEUS LINKS</h4>
                         <table class="table mt-2">
                             <tbody>
+
+                                @foreach ($urls as $url)
                                 <tr>
                                     <td class="w-100">
-                                        <a rel="noreferrer" href="#"
-                                            style="text-decoration: none; color: #808080;">meucontatoai/<strong>5555555</strong></a>
+                                        <a rel="noreferrer" href="{{ $url->url }}" style="text-decoration: none; color: #808080;">
+                                            <strong>{{ $url->url }}</strong>
+                                        </a>
                                     </td>
                                     <td>
                                         <div class="d-flex">
-                                            <button class="btn btn-secondary btn-sm rounded-circle me-2">
+                                            <button onclick="copiarLink('{{ $url->url }}')" class="btn btn-secondary btn-sm rounded-circle me-2">
                                                 <i class="bi bi-subtract"></i>
                                             </button>
+                                            
+                                            <script>
+                                                function copiarLink(link) {
+                                                    var campoDeTexto = document.createElement("input");
+                                                    campoDeTexto.value = link;
+                                                    document.body.appendChild(campoDeTexto);
+                                                    campoDeTexto.select();
+                                                    document.execCommand("copy");
+                                                    document.body.removeChild(campoDeTexto);
+                                                    alert("Link copiado para a área de transferência.");
+                                                }
+                                            </script>
+                                            
                                             <a class="btn btn-secondary btn-sm rounded-circle me-2" href="#">
                                                 <i class="bi bi-eye"></i>
                                             </a>
-                                            <a class="btn btn-secondary btn-sm rounded-circle me-2" href="{{ route('editLink') }}">
+                                            <a class="btn btn-secondary btn-sm rounded-circle me-2" href="{{ route('editLink', ['id' => $url->id]) }}">
                                                 <i class="bi bi-pencil"></i>
                                             </a>
                                         </div>
                                     </td>
                                 </tr>
+                                @endforeach
+                                
                             </tbody>
                         </table>
                     </div>

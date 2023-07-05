@@ -83,17 +83,18 @@
                                 </div>
                                 <div id="dadostab" class="tab-content">
                                     <div class="container">
-                                        <form id="formConnection" class="row">
+                                        <form id="formConnection" class="row" action="{{ route('editarLink', ['id' => $link->id]) }}" method="GET">
+                                            @csrf
                                             <div class="col-sm-12 col-md-6">
-                                                <label for="inputEmail4" class="form-label">Número de WhatsApp</label>
-                                                <input type="number" class="form-control" id="inputEmail4" placeholder="+55">
+                                                <label for="numero_whatsapp" class="form-label">Número de WhatsApp</label>
+                                                <input type="number" class="form-control" id="numero_whatsapp" name="numero_whatsapp" placeholder="+55">
                                             </div>
                                             <div class="col-sm-12 col-md-6">
-                                                <label for="inputAddress2" class="form-label">Mensagem inicial</label>
-                                                <input type="text" class="form-control" id="inputAddress2"placeholder="Olá...">
+                                                <label for="mensagem_inicial" class="form-label">Mensagem inicial</label>
+                                                <input type="text" class="form-control" id="mensagem_inicial" name="mensagem_inicial" placeholder="Olá...">
                                             </div>
                                             <div class="d-flex flex-column mt-3 flex-md-row justify-content-center justify-content-md-start">
-                                                <button class="btn btn-primary px-4" type="button">Adicionar</button>
+                                                <button class="btn btn-primary px-4" type="submit">Atualizar</button>
                                                 <button class="btn btn-outline-primary mt-3 mt-md-0 ms-md-3 px-4" type="button">Atualizar Tabela</button>
                                             </div>
                                         </form>

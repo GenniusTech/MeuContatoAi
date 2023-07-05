@@ -28,7 +28,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/createLink', [CreateLinkController::class, 'createLink'])->name('createLink');
 
     Route::get('/app', [MyAppController::class, 'app'])->name('app');
-    Route::get('/editLink', [MyAppController::class, 'editLink'])->name('editLink');
+    Route::get('/editLink/{id}', [MyAppController::class, 'editLink'])->name('editLink');
+    Route::get('/editar-link/{id}',[ MyAppController::class,'editarLink'])->name('editarLink');
 
     Route::get('/configurações', [ConfigController::class, 'config'])->name('config');
     Route::put('/update', [ConfigController::class, 'update'])->name('update');

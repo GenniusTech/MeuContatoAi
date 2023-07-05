@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('links', function (Blueprint $table) {
+        Schema::create('guias', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('user_id');
-            // $table->bigInteger('numero')->nullable();// rm
-            // $table->string('url')->nullable();// rm
-            $table->string('rota')->unique();
-            $table->string('mensagem');
+            $table->string('produto');
+            $table->string('codigo');
+            $table->decimal('valor', 8, 2);
+            $table->date('vencimento');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('links');
+        Schema::dropIfExists('guias');
     }
 };
