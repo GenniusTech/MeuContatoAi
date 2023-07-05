@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiConnectionController;
+use App\Http\Controllers\ApiGuiaController;
 use App\Http\Controllers\SuporteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,3 +19,6 @@ Route::post('delLink/{id}', [ApiConnectionController::class,'excluirLink'])->nam
 
 Route::post('addSuporte', [SuporteController::class, 'addSuporte']);
 Route::post('upSuporte/{id}', [SuporteController::class, 'upSuporte']);
+
+Route::post('/addGuia', [ApiGuiaController::class, 'addGuia']);
+
