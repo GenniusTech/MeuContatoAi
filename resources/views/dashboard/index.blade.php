@@ -20,7 +20,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 mt-3">
-                    <a href="https://meucontatoai.com/hefesto" class="app card-app p-3">
+                    <a target="_blank" href="https://meucontatoai.com/hefesto" class="app card-app p-3">
                         <i class="bi bi-grid me-2"></i>
                         <h3> Crm Multi-Atendimento </h3>
                         <small>MultiAtendimento para WhatsApp</small>
