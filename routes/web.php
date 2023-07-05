@@ -37,7 +37,6 @@ Route::middleware(['auth'])->group(function () {
     //Financeiro
     Route::get('/fatura', [FinanceiroController::class, 'index'])->name('fatura');
 
-
     Route::get('/logout', [DashController::class, 'logout'])->name('logout');
 });
 Route::get('/{any}', [LinkController::class, 'handle'])->where('any', '.*');

@@ -31,6 +31,9 @@
                                     <input type="password" name="password" class="form-control" id="senha" placeholder="Escolha uma senha!">
                                 </div>
                                 <div class="col-lg-12 d-grid gap-2 col-md-6 mx-auto">
+                                    <p class="text-success">Nosso produto custará R$ 29,90/mês para os primeiros 100 usuários. <br> Aproveite!</p>
+                                </div>
+                                <div class="col-lg-12 d-grid gap-2 col-md-6 mx-auto">
                                     <button class="btn btn-secondary" type="submit"> Cadastrar-me </button>
                                 </div>
                                 <p>

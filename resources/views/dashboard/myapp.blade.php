@@ -31,20 +31,7 @@
                                             <button onclick="copiarLink('{{ $url->url }}')" class="btn btn-secondary btn-sm rounded-circle me-2">
                                                 <i class="bi bi-subtract"></i>
                                             </button>
-                                            
-                                            <script>
-                                                function copiarLink(link) {
-                                                    var campoDeTexto = document.createElement("input");
-                                                    campoDeTexto.value = link;
-                                                    document.body.appendChild(campoDeTexto);
-                                                    campoDeTexto.select();
-                                                    document.execCommand("copy");
-                                                    document.body.removeChild(campoDeTexto);
-                                                    alert("Link copiado para a área de transferência.");
-                                                }
-                                            </script>
-                                            
-                                            <a class="btn btn-secondary btn-sm rounded-circle me-2" href="#">
+                                            <a class="btn btn-secondary btn-sm rounded-circle me-2" target="_blank" href="{{ $url->url }}">
                                                 <i class="bi bi-eye"></i>
                                             </a>
                                             <a class="btn btn-secondary btn-sm rounded-circle me-2" href="{{ route('editLink', ['id' => $url->id]) }}">
@@ -54,7 +41,7 @@
                                     </td>
                                 </tr>
                                 @endforeach
-                                
+
                             </tbody>
                         </table>
                     </div>
@@ -62,4 +49,17 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function copiarLink(link) {
+            var campoDeTexto = document.createElement("input");
+            campoDeTexto.value = link;
+            document.body.appendChild(campoDeTexto);
+            campoDeTexto.select();
+            document.execCommand("copy");
+            document.body.removeChild(campoDeTexto);
+            //alert("Link copiado para a área de transferência.");
+            Swal.fire('Successo!', 'Link Copiado para área de transferência!', 'success');
+        }
+    </script>
     @endsection

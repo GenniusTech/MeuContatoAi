@@ -18,17 +18,12 @@
                        @endif
                        @if(session('error'))
                        <div class="alert alert-error" style="color: red; margin:0;">
-                          <small>{{ session('error') }}</small> 
+                          <small>{{ session('error') }}</small>
                        </div>
                       @endif
                         <form class="row g-3 p-3"action="{{ route('createLink') }}" method="POST">
                             @csrf
                             @method('POST')
-                            <div class="col-sm-12">
-                                <label for="inputAddress" class="form-label">Numero</label>
-                                <input type="text" class="form-control" id="inputAddress"
-                                    placeholder="00-0000-0000"  name="numero">
-                            </div>
                             <div class="col-sm-12">
                                 <label for="inputAddress" class="form-label">Link personalizado</label>
                                 <input type="text" class="form-control" id="inputAddress"
