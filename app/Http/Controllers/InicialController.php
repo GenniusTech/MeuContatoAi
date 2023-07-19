@@ -15,4 +15,9 @@ class InicialController extends Controller
         }
         return view('home');
     }
+
+    public function planos ()
+    {
+        return view('planos');
+    }
 }

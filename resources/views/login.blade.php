@@ -2,7 +2,7 @@
     @section('conteudo')
 
     <div class="d-lg-flex login">
-        <div class="bg order-1 order-md-2" style="background-image: url('{{ asset('frontend/img/login.png') }}');"></div>
+        <div class="bg order-1 order-md-2" style="background-image: url('/frontend/img/login.png')"></div>
             <div class="contents order-2 order-md-1">
 
                 <div class="container">

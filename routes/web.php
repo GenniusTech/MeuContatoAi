@@ -17,6 +17,8 @@ Route::get('/', [InicialController::class, 'index'])->name('index');
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'login_action'])->name('login_action');
 
+Route::get('/planos', [InicialController::class, 'planos'])->name('planos');
+
 Route::get('/registrer', [RegisterController::class, 'register'])->name('register');
 Route::post('/registrer', [RegisterController::class, 'register_action'])->name('register_action');
 
