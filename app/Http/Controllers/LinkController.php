@@ -29,7 +29,7 @@ class LinkController extends Controller
                     return redirect($connection->url);
                 }
             } else {
-                // If the user doesn't exist or has status other than 1, redirect to the dashboard
+                // If the user doesn't exist or has status other than 1, redirect to the dashboard.
                 return redirect()->route('app');
             }
         }
