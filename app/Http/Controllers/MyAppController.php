@@ -27,7 +27,7 @@ class MyAppController extends Controller
             array_push($urls, $urlObject);
         }
     
-        return view('dashboard.myapp', ['urls' => $urls]);
+        return view('dashboard.meusLinks', ['urls' => $urls]);
     }
     
 
@@ -39,7 +39,7 @@ class MyAppController extends Controller
         if (!$link) {
             return redirect()->back()->with('error', 'Link não encontrado');
         }
-        return view('dashboard.edit_link', compact('link'));
+        return view('dashboard.editarLink', compact('link'));
     }
 
     public function editarLink($id)

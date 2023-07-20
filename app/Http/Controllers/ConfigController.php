@@ -12,7 +12,7 @@ class ConfigController extends Controller
         $usuario = Auth::user();
         $user = User::where('id', $usuario->id)->get();
         $telefoneFormatado = $this->formatarTelefone($user->first()->tell); // assume que o número de telefone está armazenado na coluna "telefone"
-        return view('dashboard.config', [
+        return view('dashboard.meusDados', [
             'telefoneFormatado' => $telefoneFormatado,
             'user' => $user->first(),
         ]);
