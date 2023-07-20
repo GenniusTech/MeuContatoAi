@@ -20,31 +20,31 @@
                     </a>
                 </div>
                 <div class="col-lg-4 mt-3">
-                    <a href="meus-aplicativos.html" class="app card-app p-3">
+                    <a target="_blank" href="https://meucontatoai.com/hefesto" class="app card-app p-3">
                         <i class="bi bi-grid me-2"></i>
                         <h3> Crm Multi-Atendimento </h3>
                         <small>MultiAtendimento para WhatsApp</small>
                     </a>
                 </div>
                 <div class="col-lg-4 mt-3">
-                    <a href="meus-aplicativos.html" class="app card-app p-3">
+                    <a href="#" class="app card-app p-3">
                         <i class="bi bi-grid me-2"></i>
                         <h3> Comprar Chips </h3>
                         <small>Em breve</small>
                     </a>
                 </div>
                 <div class="col-lg-4 mt-3">
-                    <a href="meus-aplicativos.html" class="app card-app p-3">
+                    <a href="#" class="app card-app p-3">
                         <i class="bi bi-grid me-2"></i>
                         <h3> Maturação de Chips </h3>
                         <small>Em breve</small>
                     </a>
                 </div>
                 <div class="col-lg-4 mt-3">
-                    <a href="{{ route('fatura') }}" class="app card-app p-3">
+                    <a href="#" class="app card-app p-3">
                         <i class="bi bi-credit-card me-2"></i>
                         <h3> Faturas </h3>
-                        <small>Extrato Financeiro</small>
+                        <small>Em breve</small>
                     </a>
                 </div>
             </div>
