@@ -26,7 +26,7 @@ class LoginController extends Controller
             return redirect()->route('dashboard');
         } else {
             // Autenticação falha
-            return redirect()->back()->withInput()->withErrors(['email' => 'As credenciais fornecidas são inválidas.']);
+            return redirect()->back()->with('error', 'Dados fornecidos inválidos!');
         }
     }
 }

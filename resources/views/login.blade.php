@@ -10,6 +10,11 @@
                         <div class="col-md-6">
                             <h3><strong>Seja bem-vindo</strong></h3>
                             <p class="mb-4">Faça seu login</p>
+                            @if(session('error'))
+                            <div class="alert alert-error" style="color: red; margin:0;">
+                                <small>{{ session('error') }}</small> 
+                             </div>
+                           @endif
                             <form id="formLogin" class="row g-3" method="POST" action="{{ route('login_action') }}">
                                 <input type="hidden" value={{  csrf_token() }} name="_token">
                                 <div class="col-12">
