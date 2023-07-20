@@ -2,7 +2,7 @@
     @section('conteudo')
 
     <div class="d-lg-flex login">
-        <div class="bg order-1 order-md-2" style="background-image: url('{{ asset('frontend/img/login.png') }}');"></div>
+        <div class="bg order-1 order-md-2" style="background-image: url('/frontend/img/login.png')"></div>
             <div class="contents order-2 order-md-1">
 
                 <div class="container">
@@ -11,9 +11,9 @@
                             <h3><strong>Seja bem-vindo</strong></h3>
                             <p class="mb-4">Faça seu login</p>
                             @if(session('error'))
-                            <div class="alert alert-error" style="color: red; margin:0;">
+                            <div class="alert alert-error" style="color: white; margin:0; background:rgb(136, 16, 20); border-radius: 0.25rem;">
                                 <small>{{ session('error') }}</small> 
-                             </div>
+                             </div><br>
                            @endif
                             <form id="formLogin" class="row g-3" method="POST" action="{{ route('login_action') }}">
                                 <input type="hidden" value={{  csrf_token() }} name="_token">

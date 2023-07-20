@@ -36,23 +36,27 @@ class RegisterController extends Controller
             'status' => 1
         ];
 
-        $user = User::create($dataUser);
+        try {
+            $user = User::create($dataUser);
 
-        if ($user) {
-            Auth::login($user);
+            if ($user) {
+                Auth::login($user);
 
-            $guia = new Guia();
-            $guia->produto = 'Men MeuContatoAI';
-            $guia->codigo = '0001';
-            $guia->valor = 29.90;
-            $guia->vencimento = now()->toDateString(); // Define a data de vencimento para a data atual
-            $guia->user_id = $user->id;
-            $guia->save();
+                $guia = new Guia();
+                $guia->produto = 'Men MeuContatoAI';
+                $guia->codigo = '0001';
+                $guia->valor = 29.90;
+                $guia->vencimento = now()->toDateString(); // Define a data de vencimento para a data atual
+                $guia->user_id = $user->id;
+                $guia->save();
 
-            return redirect()->route('dashboard');
+                return redirect()->route('dashboard');
+            }
+        } catch (\Exception $e) {
+            
+            return redirect()->back()->withErrors('Erro! Falha ao cadastrar o usuário!');
         }
 
         return redirect()->back()->withErrors('Erro! Falha ao cadastrar o usuário!');
     }
-
 }

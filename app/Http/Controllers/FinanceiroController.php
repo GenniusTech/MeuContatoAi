@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class FinanceiroController extends Controller
 {
     public function index() {
-        return view('dashboard.fatura');
+        return view('dashboard.minhasFaturas');
     }
 }

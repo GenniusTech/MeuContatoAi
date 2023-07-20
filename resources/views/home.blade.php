@@ -23,14 +23,20 @@
     <body>
 
         <header id="header" class="fixed-top bg-dark">
-            <div class="container">
-                <nav id="navbar" class="navbar align-items-center justify-content-end d-lg-flex">
-                    <ul>
-                        <li><a class="nav-link scrollto active text-success" href="{{ route('login') }}">Entrar</a></li>
-                        <li><a class="nav-link scrollto text-success" href="{{ route('register') }}">Registre-se</a></li>
-                    </ul>
-                    <i class="bi bi-list mobile-nav-toggle"></i>
-                </nav>
+            <div class="container d-flex align-items-center justify-content-between">
+                <a href="index.html" class="logo"><img src="{{ asset('frontend/img/logo.png') }}" alt="" class="img-fluid"></a>
+
+                <div class="container">
+                    <nav id="navbar" class="navbar align-items-center justify-content-end d-lg-flex">
+                        <ul>
+                            <li><a class="nav-link scrollto text-light" href="#services">Sobre</a></li>
+                            <li><a class="nav-link scrollto text-light" href="{{ route('planos') }}">Planos</a></li>
+                            <li><a class="nav-link scrollto active text-light" href="{{ route('login') }}">Entrar</a></li>
+                            <li><a class="nav-link scrollto text-light getstarted" href="{{ route('register') }}">Registre-se</a></li>
+                        </ul>
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                    </nav>
+                </div>
             </div>
         </header>
 
@@ -38,7 +44,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 pt-2 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                        <h1 class="mb-2"> <strong> <i class="bi bi-whatsapp mb-3"></i> Crie links <br>personalizados para <span>WhatsApp</span> </strong> </h1>
+                        <h1 class="mb-2"> <strong> <i class="bi bi-whatsapp mb-3"></i> Conecte vários WhatsApp a um link</strong> </h1>
                         <h2 class="my-3 my-md-0 mb-md-4">Com apenas um link <br> você pode ter até 20 números conexôes.</h2>
                         <div>
                             <a class="btn btn-get-started" href="#services" role="button">Como funciona?</a>
@@ -86,12 +92,8 @@
                         <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
                             <div class="icon-box">
                                 <h4><strong>Um upgrade para suas estrátegias!</strong></h4>
-                                <p>
-                                    O Meu Contato Aí é uma ferramenta que simplifica a criação de links para o WhatsApp com mensagens pré-definidas. Com essa ferramenta, você pode criar links que direcionam até 20 conexões diretas. Sim, isso significa que você pode redirecionar até 20 números diferentes usando um único link!
-                                    <br><br>
-                                    Ao utilizar o Meu Contato Aí, você pode se concentrar na sua estratégia, enquanto nossa ferramenta reduz até 90% da perda de chips. Isso significa que você pode aumentar suas vendas de forma eficiente e alcançar um maior número de clientes potenciais usando o WhatsApp.
-                                    <br><br>
-                                    Experimente o Meu Contato Aí e veja como essa ferramenta pode impulsionar suas vendas e simplificar o processo de comunicação com seus clientes. Aproveite os benefícios de ter um único link para várias conexões diretas e otimize sua estratégia de vendas com facilidade!
+                                <p style="text-align: justify;">
+                                    <i>Conecte vários números de WhatsApp</i> com facilidade através de uma única plataforma. Com apenas um link, você pode centralizar até 20 conexões de números diferentes. Simplifique a forma como você gerencia suas conversas no WhatsApp, permitindo que seus clientes ou contatos se comuniquem com você de maneira rápida e conveniente.
                                 </p>
                             </div>
                         </div>
@@ -99,7 +101,7 @@
                 </div>
             </section>
 
-            <section id="features" class="features section-bg mb-5">
+            <section id="features" class="features section-bg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-2 col-md-4">

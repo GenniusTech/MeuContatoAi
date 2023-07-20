@@ -15,14 +15,26 @@
                                         <strong>meucontatoai/{{$link->rota}}</strong>
                                     </h4>
                                     <span class="text-center text-muted mb-4 text-md-start">{{$link->mensagem}}</span>
+
                                 </div>
+                               
+                           
+                        
                                 <div class="ms-auto d-none d-md-block pt-4">
+                                    
                                     <button onclick="delLink()" class="btn btn-danger rounded-circle btn-sm ms-2">
                                         <i class="bi bi-trash-fill"></i>
                                     </button>
                                 </div>
                                 <hr>
-                            </div>
+                            </div> 
+                            @if(session('success'))
+                                <div class="alert alert-success" style="color: white; margin:0; background: rgb(32, 128, 16); border-radius: 0.25rem;">
+                                    <small>{{ session('success') }}</small>
+                                </div>
+                                <br>
+                            @endif
+
                             <hr>
                             <div class="container link-criado">
 
