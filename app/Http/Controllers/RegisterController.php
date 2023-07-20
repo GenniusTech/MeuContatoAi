@@ -59,6 +59,4 @@ class RegisterController extends Controller
 
         return redirect()->back()->withErrors('Erro! Falha ao cadastrar o usuário!');
     }
-
-
 }

@@ -15,7 +15,7 @@ class MyAppController extends Controller
         $links = Link::where('user_id', $auth->id)->get();
         $urls = [];
     
-        foreach ($links as $link) {
+        foreach ($links as $link) { 
             $rota = $link->rota;
             $url = config('app.url') . '/' . $rota;
             
